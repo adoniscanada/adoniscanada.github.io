@@ -3,11 +3,18 @@
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
+.poems {
+  margin: 2rem;
+  padding: 1rem;
+  outline: 2px solid;
+}
+
 .header-1 {
   text-align: center;
   margin: 0, auto;
 }
 
 p.poem {
-  margin-left: 4rem;
+  margin: 1rem 1rem 4rem;
+  line-height: 2rem;
 }
