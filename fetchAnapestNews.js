@@ -10,7 +10,7 @@ async function fetchPoems() {
     // container.className = "poem-title-container";
     // document.querySelector(".poems").appendChild(container);
 
-    let h = document.createElement("h3");
+    let h = document.createElement("h4");
     h.className = "poem";
     h.textContent = key;
     document.querySelector(".poems").appendChild(h);
@@ -21,8 +21,8 @@ async function fetchPoems() {
     p.innerHTML = t;
     document.querySelector(".poems").appendChild(p);
   }
-  document.querySelector(".poem-count").textContent =
-    String(Object.keys(dict).length) + " Poems";
+  document.querySelector("#poem-count").textContent =
+    String(Object.keys(dict).length) + " Minute Read";
 }
 
 fetchPoems();
