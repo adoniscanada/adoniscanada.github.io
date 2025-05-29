@@ -6,6 +6,10 @@ async function fetchPoems() {
   const dict = JSON.parse(data);
 
   for (let key in dict) {
+    // let container = document.createElement("div");
+    // container.className = "poem-title-container";
+    // document.querySelector(".poems").appendChild(container);
+
     let h = document.createElement("h3");
     h.className = "poem";
     h.textContent = key;
@@ -17,6 +21,8 @@ async function fetchPoems() {
     p.innerHTML = t;
     document.querySelector(".poems").appendChild(p);
   }
+  document.querySelector(".poem-count").textContent =
+    String(Object.keys(dict).length) + " Poems";
 }
 
 fetchPoems();
