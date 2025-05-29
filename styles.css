@@ -32,7 +32,7 @@ body {
 .hero {
   min-height: 100vh;
   display: grid;
-  grid-template-rows: 4rem 2rem;
+  grid-template-rows: 64px 24px;
   align-content: center;
 }
 
@@ -108,8 +108,11 @@ body {
   border-top: 1px solid var(--mainBlack);
 }
 
-.poems p {
+.poems {
   line-height: 2rem;
+  margin-bottom: 4rem;
+  transition: var(--mainTransition);
+  animation: fadeIn 1s ease-in-out 1;
 }
 
 .poems p::before {
@@ -124,6 +127,10 @@ body {
   margin-right: 6px;
   background: var(--mainBlack);
   display: inline-block;
+}
+
+.indent {
+  padding-right: 1rem;
 }
 
 @keyframes slideFromTop {
@@ -145,5 +152,14 @@ body {
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
