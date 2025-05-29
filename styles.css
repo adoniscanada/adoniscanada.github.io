@@ -22,11 +22,11 @@ body {
 }
 
 .main-container {
-  margin: 4rem;
+  margin: 48px 12px;
 }
 
 .main-container p {
-  margin: 1rem 0.25rem;
+  margin: 8px;
 }
 
 .hero {
@@ -86,13 +86,13 @@ body {
 }
 
 .resource-list {
-  margin: 1rem 1.25rem;
+  margin: 24px;
 }
 
 .resource-list li {
   color: var(--primaryColor);
   list-style-type: square;
-  margin-bottom: 0.5rem;
+  margin: 4px;
   font-size: small;
 }
 
@@ -109,10 +109,14 @@ body {
 }
 
 .poems {
-  line-height: 2rem;
-  margin-bottom: 4rem;
+  line-height: 32px;
   transition: var(--mainTransition);
   animation: fadeIn 1s ease-in-out 1;
+}
+
+.poems p {
+  font-size: small;
+  margin: 0 0 32px 32px;
 }
 
 .poems p::before {
@@ -130,7 +134,7 @@ body {
 }
 
 .indent {
-  padding-right: 1rem;
+  margin: -4px;
 }
 
 @keyframes slideFromTop {
