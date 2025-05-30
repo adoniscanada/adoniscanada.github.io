@@ -1,9 +1,12 @@
 :root {
-  --primaryColor: #b44934;
-  --mainBlack: #303843;
-  --mainWhite: #f3f3f3;
-  --mainGray: #636663;
-  --mainSpacing: 0.1rem;
+  --primaryColor: #b54646;
+  --primaryIColor: #4ab9b9;
+  --secondaryColor: #d59d50;
+  --secondaryIColor: #2a62af;
+  --mainBlack: #21202a;
+  --mainWhite: #dedfd5;
+  --mainGray: #343343;
+  --mainSpacing: 1px;
   --mainTransition: all 0.1s linear;
 }
 
@@ -13,6 +16,66 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+.main-navbar {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 500px 500px;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  background: var(--mainGray);
+}
+
+.main-navbar button {
+  text-transform: capitalize;
+  text-decoration: none;
+  color: var(--primaryColor);
+  background: none;
+  border: none;
+  font-size: 64px;
+  font-weight: bolder;
+  text-align: center;
+  padding: 32px;
+  transition: transform 0.5s ease-in-out, color 0.5s linear;
+  animation: fadeIn 1s linear;
+}
+
+.main-navbar button:hover {
+  transform: translateY(-8px);
+  color: var(--primaryIColor);
+  text-decoration: underline;
+}
+
+.projects-list {
+  list-style: none;
+}
+
+.projects-list li {
+  margin-left: 16px;
+  margin-bottom: 8px;
+  display: none;
+}
+
+.projects-list li a {
+  color: var(--secondaryColor);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1s;
+  }
+}
+
+/* .home-panel {
+  background: var(--mainBlack);
+  color: var(--secondaryColor);
+  border: 4px var(--secondaryColor) solid;
+  padding: 8px;
 }
 
 body {
@@ -166,4 +229,4 @@ body {
   100% {
     opacity: 1;
   }
-}
+} */
