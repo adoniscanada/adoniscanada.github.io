@@ -9,8 +9,16 @@
   </head>
   <body>
     <nav class="main-navbar">
-      <button id="btn-about">about</button>
-      <button id="btn-projects">projects</button>
+      <button id="btn-about" class="main-btn">about</button>
+      <div class="dropdown">
+        <button id="btn-projects" class="main-btn">projects</button>
+        <div class="dropdown-content">
+          <ul>
+            <li><a href="#" class="main-btn">one</a></li>
+            <li><a href="#" class="main-btn">b</a></li>
+          </ul>
+        </div>
+      </div>
     </nav>
     <script src="mainNav.js"></script>
   </body>
