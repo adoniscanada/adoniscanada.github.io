@@ -42,26 +42,9 @@
 }
 
 .main-btn:hover {
+  transform: translateY(-8px);
   color: var(--primaryIColor);
   text-decoration: underline;
-}
-
-.main-btn button:hover {
-  transform: translateY(-8px);
-}
-
-.projects-list {
-  list-style: none;
-}
-
-.projects-list li {
-  margin-left: 16px;
-  margin-bottom: 8px;
-  display: none;
-}
-
-.projects-list li a {
-  color: var(--secondaryColor);
 }
 
 .dropdown {
@@ -71,10 +54,28 @@
 .dropdown-content {
   opacity: 0;
   position: absolute;
+  left: 48px;
+}
+
+.dropdown-content li {
+  list-style: decimal;
+  margin: 4px;
+}
+
+.dropdown-content li::marker {
+  color: var(--mainWhite);
+}
+
+.main-link {
+  font-size: 32px;
+  color: var(--secondaryColor);
+}
+
+.main-link:hover {
+  color: var(--secondaryIColor);
 }
 
 .dropdown-content a {
-  font-size: 32px;
   display: block;
 }
 
@@ -84,6 +85,11 @@
 
 .content-container {
   margin: 8px;
+}
+
+.main-header {
+  background: var(--mainBlack);
+  margin-bottom: 32px;
 }
 
 @keyframes fadeIn {
