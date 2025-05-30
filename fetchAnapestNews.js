@@ -15,7 +15,10 @@ async function fetchPoems() {
     h.textContent = key;
     document.querySelector(".poems").appendChild(h);
 
-    let t = dict[key].replaceAll("\n", "<br /> <span class='indent'></span>");
+    let t = dict[key].replaceAll(
+      "<br />",
+      "<br /> <span class='indent'></span>"
+    );
     let p = document.createElement("p");
     p.className = "poem";
     p.innerHTML = t;
