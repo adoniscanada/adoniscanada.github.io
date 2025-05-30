@@ -7,6 +7,7 @@
   --mainWhite: #dedfd5;
   --mainGray: #343343;
   --mainSpacing: 1px;
+  --mainHeight: 32px;
   --mainTransition: all 0.1s linear;
 }
 
@@ -67,8 +68,9 @@
 }
 
 .main-link {
-  font-size: 32px;
+  font-size: 24px;
   color: var(--secondaryColor);
+  font-weight: 500;
 }
 
 .main-link:hover {
@@ -84,12 +86,46 @@
 }
 
 .content-container {
-  margin: 8px;
+  line-height: var(--mainHeight);
+  padding-top: 64px;
+  background: var(--mainGray);
 }
 
 .main-header {
   background: var(--mainBlack);
-  margin-bottom: 32px;
+  padding: 8px;
+  position: fixed;
+  width: 100vw;
+}
+
+.project-header {
+  color: var(--mainWhite);
+  padding: 8px;
+}
+
+.project-header h1 {
+  color: var(--primaryColor);
+  margin-bottom: 4px;
+}
+
+.project-header h3 {
+  color: var(--secondaryColor);
+  margin-bottom: 4px;
+}
+
+.resource-list {
+  background: var(--mainBlack);
+}
+
+.resource-list li {
+  list-style: disc inside;
+  margin: 2px;
+  line-height: 16px;
+  font-size: small;
+}
+
+.resource-list li a {
+  font-size: small;
 }
 
 @keyframes fadeIn {
