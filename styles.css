@@ -107,6 +107,8 @@ body {
 }
 
 .project-header {
+  display: grid;
+  grid-template-columns: auto auto;
   color: var(--mainWhite);
   margin: 0 12px;
   text-align: justify;
@@ -130,15 +132,16 @@ body {
   text-decoration: underline;
 }
 
-.resource-list {
+.main-list {
   background: var(--mainBlack);
   border: 2px var(--secondaryColor) outset;
   border-radius: var(--mainRadius);
-  padding: 0 4px;
+  padding: 4px;
   margin: 24px;
+  text-align: left;
 }
 
-.resource-list li {
+.main-list li {
   list-style: none;
   margin: 2px;
   line-height: 16px;
@@ -146,7 +149,7 @@ body {
   text-transform: uppercase;
 }
 
-.resource-list li a {
+.main-list li a {
   font-size: small;
 }
 
@@ -222,9 +225,6 @@ body {
 @media screen and (max-width: 768px) {
   .main-navbar button {
     font-size: 32px;
-  }
-  .dropdown-content {
-    opacity: 1;
   }
 }
 

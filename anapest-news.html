@@ -15,54 +15,67 @@
     </header>
     <div class="content-container">
       <div class="project-header">
-        <h1>Anapest News</h1>
-        <h3>Scraping CNN articles and formatting them into anapest poems</h3>
-        <p>
-          In this project, the homepage of CNN is scraped for linked articles,
-          and the content of these articles is iterated through and processed
-          based on certain rules. First, any words that conflict with the meter
-          are removed, and some grammar rules are enforced. Additionally, the
-          algorithm adds syntax and stanzas. This function is hosted in a Python
-          script, which is executed routinely using CRON job scheduler. Poems
-          are generated at 6:00, 12:00, and 18:00, then stored in a JSON on my
-          Github repository. I fetch this file and display them below, while
-          imitating the style of the original articles. On average, each
-          web-scrape generates 25 poems. As such, this project generates roughly
-          75 poems per day. You can ready today's poems below!
-        </p>
-        <ul class="resource-list">
-          <h3>Technology Used</h3>
-          <li>
-            <i class="fa-solid fa-book"></i>
-            <a
-              href="http://www.speech.cs.cmu.edu/cgi-bin/cmudict"
-              target="_blank"
-              class="main-link"
-              >Carnegie Mellon University Pronouncing Dictionary</a
-            >
-          </li>
-          <li>
-            <i class="fa-solid fa-newspaper"></i>
-            <a href="https://www.cnn.com/" target="_blank" class="main-link"
-              >CNN.com</a
-            >
-          </li>
-          <li>
-            <i class="fa-brands fa-python"></i> Python: Requests, BeautifulSoup
-          </li>
-          <li><i class="fa-brands fa-github"></i> Github: Actions</li>
-          <li><i class="fa-solid fa-file"></i> YAML</li>
-          <li><i class="fa-brands fa-html5"></i> HTML</li>
-          <li><i class="fa-brands fa-css"></i> CSS</li>
-          <li><i class="fa-brands fa-js"></i> JavaScript</li>
-        </ul>
-        <p>
+        <div>
+          <h1>Anapest News</h1>
+          <h3>Scraping CNN articles and formatting them into anapest poems</h3>
+          <p>
+            In this project, the homepage of CNN is scraped for linked articles,
+            and the content of these articles is iterated through and processed
+            based on certain rules. First, any words that conflict with the
+            meter are removed, and some grammar rules are enforced.
+            Additionally, the algorithm adds syntax and stanzas. This function
+            is hosted in a Python script, which is executed routinely using CRON
+            job scheduler. Poems are generated at 6:00, 12:00, and 18:00, then
+            stored in a JSON on my Github repository. I fetch this file and
+            display them below, while imitating the style of the original
+            articles. On average, each web-scrape generates 25 poems. As such,
+            this project generates roughly 75 poems per day. You can ready
+            today's poems below!
+          </p>
+        </div>
+        <div>
+          <ul class="main-list">
+            <h3>Technology Used</h3>
+            <li>
+              <i class="fa-solid fa-book"></i>
+              <a
+                href="http://www.speech.cs.cmu.edu/cgi-bin/cmudict"
+                target="_blank"
+                class="main-link"
+                >Carnegie Mellon University Pronouncing Dictionary</a
+              >
+            </li>
+            <li>
+              <i class="fa-solid fa-newspaper"></i>
+              <a href="https://www.cnn.com/" target="_blank" class="main-link"
+                >CNN.com</a
+              >
+            </li>
+            <li>
+              <i class="fa-brands fa-python"></i> Python: Requests,
+              BeautifulSoup
+            </li>
+            <li><i class="fa-brands fa-github"></i> Github: Actions</li>
+            <li><i class="fa-solid fa-file"></i> YAML</li>
+            <li><i class="fa-brands fa-html5"></i> HTML</li>
+            <li><i class="fa-brands fa-css"></i> CSS</li>
+            <li><i class="fa-brands fa-js"></i> JavaScript</li>
+          </ul>
+          <ul class="main-list">
+            <h3>Skills</h3>
+            <li>1. Automation</li>
+            <li>2. Web Design</li>
+            <li>3. Word Processing</li>
+            <li>4. Web Scraping</li>
+          </ul>
+        </div>
+        <!-- <p>
           <span class="project-tag">automation</span>
           <span class="project-tag">just for fun</span>
           <span class="project-tag">web design</span>
           <span class="project-tag">word processing</span>
           <span class="project-tag">web scraping</span>
-        </p>
+        </p> -->
       </div>
       <div class="poems">
         <p id="poem-count">1 Minute Read</p>
