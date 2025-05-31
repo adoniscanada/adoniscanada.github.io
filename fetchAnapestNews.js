@@ -17,7 +17,7 @@ async function fetchPoems() {
 
     let t = dict[key].replaceAll(
       "<br />",
-      "<br /> <span class='indent'></span>"
+      "<br /> <span class='unindent'></span>"
     );
     let p = document.createElement("p");
     p.className = "poem";

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Canadaa</title>
     <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./fontawesome-free-6.7.2-web/css/all.css" />
   </head>
   <body>
     <header class="main-header">
@@ -17,11 +18,22 @@
         <h1>Anapest News</h1>
         <p>
           A live-project about scraping CNN articles and formatting them into
-          anapest poems. These poems are generated at 6AM, noon, and 6PM. Enjoy!
+          anapest poems. <br>This process is done through an algorithm that iterates
+          through each word and removes any words that conflict with the anapest meter.
+          Then, certain grammar rules are enforced, as well as rules that add syntax and stanzas. A server generates
+          these poems using CRON job scheduler. Poems are generated a 6AM, noon,
+          and 6PM, and are hosted on this website, designed like the original articles. You can read today's poems below!
+        </p> 
+          <p>
+            <span class="project-tag">automation</span>
+            <span class="project-tag">web scraping</span>
+            <span class="project-tag">word processing</span> 
+            <span class="project-tag">just for fun</span></p>
         </p>
-        <h3>Resources Used</h3>
         <ul class="resource-list">
+          <h3>Resources Used</h3>
           <li>
+            <i class="fa-solid fa-book"></i>
             <a
               href="http://www.speech.cs.cmu.edu/cgi-bin/cmudict"
               target="_blank"
@@ -30,19 +42,25 @@
             >
           </li>
           <li>
+            <i class="fa-solid fa-newspaper"></i>
             <a href="https://www.cnn.com/" target="_blank" class="main-link"
               >CNN.com</a
             >
           </li>
-          <li>Python: Requests, BeautifulSoup</li>
-          <li>Github Actions</li>
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>JavaScript</li>
+          <li>
+            <i class="fa-brands fa-python"></i> Python: Requests, BeautifulSoup
+          </li>
+          <li><i class="fa-brands fa-github"></i> Github: Actions</li>
+          <li><i class="fa-solid fa-file"></i> YAML</li>
+          <li><i class="fa-brands fa-html5"></i> HTML</li>
+          <li><i class="fa-brands fa-css"></i> CSS</li>
+          <li><i class="fa-brands fa-js"></i> JavaScript</li>
         </ul>
       </div>
-      <p id="poem-count">1 Minute Read</p>
-      <div class="poems"><script src="fetchAnapestNews.js"></script></div>
+
+      <div class="poems">
+        <p id="poem-count">1 Minute Read</p>
+        <script src="fetchAnapestNews.js"></script></div>
     </div>
   </body>
 </html>
