@@ -8,7 +8,7 @@
   --mainGray: #343343;
   --secondaryGray: #8785a2;
   --mainSpacing: 1px;
-  --mainHeight: 32px;
+  --mainHeight: 1.5;
   --mainRadius: 4px;
   --mainTransition: all 0.2s linear;
 }
@@ -19,10 +19,12 @@
   margin: 0;
   padding: 0;
   letter-spacing: var(--mainSpacing);
+  line-height: var(--mainHeight);
 }
 
 body {
   background: var(--mainGray);
+  font-size: medium;
 }
 
 .main-navbar {
@@ -39,10 +41,9 @@ body {
   color: var(--primaryColor);
   background: none;
   border: none;
-  font-size: 64px;
+  font-size: xx-large;
   font-weight: bolder;
   transition: transform 0.5s ease-in-out, color 0.5s linear;
-  animation: fadeIn 1s linear;
   margin-bottom: 8px;
 }
 
@@ -56,21 +57,23 @@ body {
   color: var(--mainWhite);
 }
 
-.dropdown-content a {
-  display: block;
-}
-
 #casual {
   height: 307px;
   object-fit: cover;
   float: right;
   margin-left: 4px;
-  border: 1px solid var(--mainBlack);
+  border: 2px solid;
+  border-color: var(--primaryColor);
+  border-radius: 8px;
+  transition: transform 0.5s ease-in-out, border-color 0.5s linear;
+}
+
+#casual:hover {
+  transform: skewX(1deg);
 }
 
 .main-link {
-  font-size: 24px;
-  font-style: italic;
+  font-size: medium;
   text-decoration: none;
   color: var(--secondaryColor);
   transition: var(--mainTransition);
@@ -91,8 +94,29 @@ body {
   opacity: 1;
 }
 
+.dropdown:hover #casual {
+  border-color: var(--primaryIColor);
+}
+
+.project-tag {
+  background: var(--primaryIColor);
+  color: var(--mainBlack);
+  border-radius: 2px;
+  padding: 4px;
+  text-transform: capitalize;
+  font-size: smaller;
+  line-height: 1;
+  display: inline-block;
+  transition: var(--mainTransition);
+}
+
+.project-tag:hover {
+  background: var(--primaryColor);
+  color: var(--mainWhite);
+  text-decoration: underline;
+}
+
 .content-container {
-  line-height: var(--mainHeight);
   padding-top: 64px;
   background: var(--mainGray);
 }
@@ -136,7 +160,6 @@ body {
 }
 
 .list-container {
-  float: right;
   background: var(--mainGray);
   margin-left: 8px;
 }
@@ -153,29 +176,17 @@ body {
 .main-list li {
   list-style: none;
   margin: 2px;
-  line-height: 16px;
   font-size: small;
   text-transform: uppercase;
+  color: var(--mainWhite);
 }
 
 .main-list li a {
   font-size: small;
 }
 
-.project-tag {
-  background: var(--primaryColor);
-  border-radius: var(--mainRadius);
-  padding: 4px;
-  text-transform: capitalize;
-  font-size: small;
-  display: inline-block;
-  transition: var(--mainTransition);
-  line-height: 16px;
-}
-
-.project-tag:hover {
-  background: var(--primaryIColor);
-  color: var(--mainBlack);
+.project-header .list-container {
+  float: right;
 }
 
 .poems {
@@ -195,7 +206,7 @@ body {
 
 .poems h4 {
   font-family: "Times New Roman", Times, serif;
-  font-size: 16px;
+  font-size: medium;
   border-top: 1px lightgray solid;
   margin-top: 16px;
 }
@@ -223,17 +234,12 @@ body {
   margin-right: -6px;
 }
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1s;
-  }
-}
-
 @media screen and (max-width: 768px) {
-  .main-navbar button {
-    font-size: 32px;
+  .main-btn {
+    font-size: large;
+  }
+  #casual {
+    height: 154px;
+    float: none;
   }
 }
