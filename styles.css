@@ -28,12 +28,12 @@ body {
 .main-navbar {
   height: 100vh;
   display: grid;
-  grid-template-columns: auto auto;
-  justify-items: center;
-  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  margin: 4px;
+  text-align: center;
 }
 
-.main-navbar button {
+.main-btn {
   text-transform: capitalize;
   text-decoration: none;
   color: var(--primaryColor);
@@ -41,34 +41,31 @@ body {
   border: none;
   font-size: 64px;
   font-weight: bolder;
-  text-align: center;
   transition: transform 0.5s ease-in-out, color 0.5s linear;
   animation: fadeIn 1s linear;
-}
-
-.main-btn:hover {
-  transform: translateY(-8px);
-  color: var(--primaryIColor);
-  text-decoration: underline;
-}
-
-.dropdown {
-  position: relative;
+  margin-bottom: 8px;
 }
 
 .dropdown-content {
   opacity: 0;
-  position: absolute;
   transition: var(--mainTransition);
 }
 
-.dropdown-content li {
-  list-style: decimal;
-  margin: 4px;
+.dropdown-content p {
+  text-align: left;
+  color: var(--mainWhite);
 }
 
-.dropdown-content li::marker {
-  color: var(--mainWhite);
+.dropdown-content a {
+  display: block;
+}
+
+#casual {
+  height: 307px;
+  object-fit: cover;
+  float: right;
+  margin-left: 4px;
+  border: 1px solid var(--mainBlack);
 }
 
 .main-link {
@@ -84,8 +81,10 @@ body {
   text-decoration: underline;
 }
 
-.dropdown-content a {
-  display: block;
+.dropdown:hover .main-btn {
+  transform: translateY(-2px);
+  color: var(--primaryIColor);
+  text-decoration: underline;
 }
 
 .dropdown:hover .dropdown-content {
@@ -108,7 +107,6 @@ body {
 
 .project-header {
   color: var(--mainWhite);
-  text-align: justify;
   min-height: 500px;
   border-bottom: 1px var(--mainBlack) solid;
 }
@@ -206,6 +204,7 @@ body {
   content: "";
   width: 2px;
   height: 16px;
+  margin-left: -6px;
   margin-right: 6px;
   background: var(--mainBlack);
   display: inline-block;
@@ -238,163 +237,3 @@ body {
     font-size: 32px;
   }
 }
-
-/* .home-panel {
-  background: var(--mainBlack);
-  color: var(--secondaryColor);
-  border: 4px var(--secondaryColor) solid;
-  padding: 8px;
-}
-
-body {
-  background: var(--mainWhite);
-  color: var(--mainBlack);
-  letter-spacing: var(--mainSpacing);
-}
-
-.main-container {
-  margin: 48px 12px;
-}
-
-.main-container p {
-  margin: 8px;
-}
-
-.hero {
-  min-height: 100vh;
-  display: grid;
-  grid-template-rows: 64px 24px;
-  align-content: center;
-}
-
-.hero h1 {
-  color: var(--primaryColor);
-}
-
-.hero h1,
-.hero h3 {
-  animation: slideFromTop 1s ease-out 1;
-}
-
-.hero p {
-  margin: 0;
-  animation: slideFromBottom 1s ease-out 1;
-}
-
-.a-title {
-  font-weight: bold;
-}
-
-.main-navbar {
-  background: var(--mainBlack);
-  padding: 1rem;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-}
-
-.main-navbar ul {
-  display: grid;
-  grid-template-columns: auto 1fr;
-}
-
-.main-navbar li {
-  list-style: none;
-  padding: 0 1rem;
-}
-
-.main-navbar a {
-  color: var(--primaryColor);
-  text-decoration: none;
-  display: block;
-  padding: 0;
-  letter-spacing: var(--mainSpacing);
-  transition: var(--mainTransition);
-}
-.main-navbar a:hover {
-  color: var(--mainWhite);
-}
-
-.resource-list {
-  margin: 24px;
-}
-
-.resource-list li {
-  color: var(--primaryColor);
-  list-style-type: square;
-  margin: 4px;
-  font-size: small;
-}
-
-.resource-list li a {
-  color: var(--primaryColor);
-}
-
-#poem-count {
-  font-size: small;
-  color: var(--mainGray);
-  margin-top: 2rem;
-  padding: 0.5rem 0;
-  border-top: 1px solid var(--mainBlack);
-}
-
-.poems {
-  line-height: 32px;
-  transition: var(--mainTransition);
-  animation: fadeIn 1s ease-in-out 1;
-}
-
-.poems p {
-  font-size: small;
-  margin: 0 0 32px 32px;
-}
-
-.poems p::before {
-  content: "(CNN) — ";
-  font-weight: bold;
-}
-
-.poems h4::before {
-  content: "";
-  width: 4px;
-  height: 16px;
-  margin-right: 6px;
-  background: var(--mainBlack);
-  display: inline-block;
-}
-
-.indent {
-  margin: -4px;
-}
-
-@keyframes slideFromTop {
-  0% {
-    opacity: 0;
-    transform: translateY(-2rem);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideFromBottom {
-  0% {
-    opacity: 0;
-    transform: translateY(2rem);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-} */
