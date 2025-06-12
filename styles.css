@@ -4,7 +4,7 @@
   --secondaryColor: #d59d50;
   --secondaryIColor: #2a62af;
   --mainBlack: #21202a;
-  --mainWhite: #edede8;
+  --mainWhite: white;
   --mainGray: #343343;
   --secondaryGray: #8785a2;
   --mainSpacing: 1px;
@@ -23,16 +23,16 @@
 }
 
 body {
-  background: var(--mainGray);
   font-size: medium;
 }
 
 .main-navbar {
-  height: 100vh;
+  height: 50vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin: 4px;
+  padding: 4px;
   text-align: center;
+  background: var(--mainGray);
 }
 
 .main-btn {
@@ -131,8 +131,7 @@ body {
 
 .project-header {
   color: var(--mainWhite);
-  min-height: 500px;
-  border-bottom: 1px var(--mainBlack) solid;
+  height: 50vh;
 }
 
 .project-header h1 {
@@ -140,18 +139,16 @@ body {
   text-transform: capitalize;
   display: inline;
   transition: var(--mainTransition);
-  margin: 4px;
+  margin: 0 4px;
 }
 
 .project-header h3 {
   text-transform: capitalize;
-  border-bottom: 1px var(--mainWhite) solid;
-  margin-bottom: 12px;
-  margin: 4px;
+  margin: 0 4px;
 }
 
 .project-header p {
-  margin: 4px;
+  margin: 0 4px;
 }
 
 .project-header h1:hover {
@@ -159,14 +156,9 @@ body {
   text-decoration: underline;
 }
 
-.list-container {
-  background: var(--mainGray);
-  margin-left: 8px;
-}
-
 .main-list {
   background: var(--mainBlack);
-  border: 2px var(--secondaryColor) outset;
+  border: 1px var(--mainBlack) inset;
   border-radius: var(--mainRadius);
   padding: 4px;
   margin: 4px;
@@ -185,12 +177,8 @@ body {
   font-size: small;
 }
 
-.project-header .list-container {
-  float: right;
-}
-
 .poems {
-  background: var(--mainWhite);
+  background: white;
   padding: 16px;
 }
 
@@ -207,7 +195,7 @@ body {
 .poems h4 {
   font-family: "Times New Roman", Times, serif;
   font-size: medium;
-  border-top: 1px lightgray solid;
+  border-top: 1px solid var(--secondaryGray);
   margin-top: 16px;
 }
 
