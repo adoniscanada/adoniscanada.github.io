@@ -14,24 +14,29 @@
 }
 
 * {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   letter-spacing: var(--mainSpacing);
   line-height: var(--mainHeight);
+  color: var(--mainWhite);
 }
 
 body {
   font-size: medium;
+  background: var(--mainGray);
+}
+
+.content-container {
+  margin: 4px;
 }
 
 .main-navbar {
-  height: 50vh;
   display: grid;
+  gap: 8px;
   grid-template-columns: 1fr 1fr;
-  padding: 4px;
-  text-align: center;
   background: var(--mainGray);
 }
 
@@ -42,19 +47,12 @@ body {
   background: none;
   border: none;
   font-size: xx-large;
-  font-weight: bolder;
   transition: transform 0.5s ease-in-out, color 0.5s linear;
-  margin-bottom: 8px;
 }
 
 .dropdown-content {
   opacity: 0;
   transition: var(--mainTransition);
-}
-
-.dropdown-content p {
-  text-align: left;
-  color: var(--mainWhite);
 }
 
 #casual {
@@ -116,53 +114,46 @@ body {
   text-decoration: underline;
 }
 
-.content-container {
-  padding-top: 64px;
-  background: var(--mainGray);
-}
-
-.main-header {
+header {
   background: var(--mainBlack);
-  padding: 8px;
-  position: fixed;
-  width: 100vw;
-  border-bottom: 1px var(--primaryColor) solid;
+  padding: 4px;
 }
 
 .project-header {
-  color: var(--mainWhite);
-  height: 50vh;
+  background: var(--mainGray);
 }
 
-.project-header h1 {
+.project-header h2 {
   color: var(--primaryColor);
   text-transform: capitalize;
   display: inline;
   transition: var(--mainTransition);
-  margin: 0 4px;
 }
 
 .project-header h3 {
   text-transform: capitalize;
-  margin: 0 4px;
 }
 
 .project-header p {
-  margin: 0 4px;
+  margin: 16px 4px;
 }
 
-.project-header h1:hover {
+.project-header h2:hover {
   color: var(--primaryIColor);
   text-decoration: underline;
 }
 
 .main-list {
   background: var(--mainBlack);
-  border: 1px var(--mainBlack) inset;
+  border: 2px var(--secondaryGray) dashed;
   border-radius: var(--mainRadius);
   padding: 4px;
   margin: 4px;
   text-align: left;
+}
+
+.project-header .main-list {
+  float: right;
 }
 
 .main-list li {
@@ -170,7 +161,6 @@ body {
   margin: 2px;
   font-size: small;
   text-transform: uppercase;
-  color: var(--mainWhite);
 }
 
 .main-list li a {
@@ -185,6 +175,7 @@ body {
 .poems p {
   font-size: small;
   font-family: "Times New Roman", Times, serif;
+  color: var(--mainBlack);
 }
 
 .poems p::before {
@@ -197,6 +188,7 @@ body {
   font-size: medium;
   border-top: 1px solid var(--secondaryGray);
   margin-top: 16px;
+  color: var(--mainBlack);
 }
 
 .poems h4::before {
@@ -228,6 +220,9 @@ body {
   }
   #casual {
     height: 154px;
+    float: none;
+  }
+  .project-header .main-list {
     float: none;
   }
 }
