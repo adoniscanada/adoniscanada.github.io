@@ -1,0 +1,61 @@
+---
+import { Icon } from "astro-icon/components";
+
+const year = new Date().getFullYear();
+
+const socials = [
+  {
+    label: "Email",
+    href: "mailto:adonis@canadaa.org",
+    icon: "tabler:mail",
+    external: false,
+  },
+  {
+    label: "GitHub",
+    href: "https://github.com/adoniscanada",
+    icon: "simple-icons:github",
+    external: true,
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/adoniscanada/",
+    icon: "simple-icons:linkedin",
+    external: true,
+  },
+  {
+    label: "Resume",
+    href: "#",
+    icon: "tabler:file-text",
+    external: true,
+  },
+];
+---
+
+<footer id="contact" class="bg-base-200 border-base-300 mt-12 border-t">
+  <div
+    class="mx-auto flex w-full max-w-5xl flex-col items-center gap-6 px-4 py-16 text-center"
+  >
+    <h2 class="text-2xl font-bold tracking-tight">Let's connect.</h2>
+    <p class="text-base-content/70 max-w-prose">
+      Open to roles in cybersecurity and full-stack development.
+    </p>
+    <div class="flex flex-wrap justify-center gap-3">
+      {
+        socials.map((social) => (
+          <a
+            href={social.href}
+            class="btn btn-outline btn-sm gap-1.5"
+            target={social.external ? "_blank" : undefined}
+            rel={social.external ? "noopener noreferrer" : undefined}
+          >
+            <Icon name={social.icon} class="size-4" />
+            {social.label}
+          </a>
+        ))
+      }
+    </div>
+    <p class="text-base-content/50 text-sm">
+      © {year} Adonis Canada · Built with Astro & Tailwind
+    </p>
+  </div>
+</footer>

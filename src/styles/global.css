@@ -1,2 +1,124 @@
 @import "tailwindcss";
-@plugin "daisyui";
+@plugin "daisyui" {
+  themes:
+    azure --default,
+    azure-dark --prefersdark;
+}
+
+@plugin "daisyui/theme" {
+  name: "azure";
+  default: true;
+  prefersdark: false;
+  color-scheme: light;
+
+  /* Cool off-white surfaces, deep slate text */
+  --color-base-100: oklch(98.5% 0.004 240);
+  --color-base-200: oklch(96% 0.006 240);
+  --color-base-300: oklch(91% 0.009 245);
+  --color-base-content: oklch(28% 0.03 255);
+
+  /* Electric azure — primary action */
+  --color-primary: oklch(55% 0.18 250);
+  --color-primary-content: oklch(98% 0.01 250);
+
+  /* Deep navy — secondary */
+  --color-secondary: oklch(42% 0.09 255);
+  --color-secondary-content: oklch(97% 0.01 250);
+
+  /* Sky / cyan — accent / highlights */
+  --color-accent: oklch(74% 0.13 220);
+  --color-accent-content: oklch(28% 0.07 235);
+
+  /* Neutral cool charcoal */
+  --color-neutral: oklch(30% 0.025 255);
+  --color-neutral-content: oklch(95% 0.006 240);
+
+  --color-info: oklch(70% 0.12 230);
+  --color-info-content: oklch(25% 0.05 230);
+  --color-success: oklch(70% 0.13 155);
+  --color-success-content: oklch(26% 0.06 155);
+  --color-warning: oklch(82% 0.13 80);
+  --color-warning-content: oklch(38% 0.08 80);
+  --color-error: oklch(63% 0.19 25);
+  --color-error-content: oklch(98% 0.01 25);
+
+  --radius-selector: 1rem;
+  --radius-field: 0.5rem;
+  --radius-box: 0.75rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 1;
+  --noise: 0;
+}
+
+@plugin "daisyui/theme" {
+  name: "azure-dark";
+  default: false;
+  prefersdark: true;
+  color-scheme: dark;
+
+  /* Deep navy-black surfaces, cool off-white text */
+  --color-base-100: oklch(20% 0.018 255);
+  --color-base-200: oklch(24% 0.02 255);
+  --color-base-300: oklch(29% 0.022 255);
+  --color-base-content: oklch(92% 0.012 240);
+
+  /* Azure, lifted for dark surfaces */
+  --color-primary: oklch(66% 0.17 250);
+  --color-primary-content: oklch(20% 0.04 250);
+
+  /* Steel blue — secondary */
+  --color-secondary: oklch(72% 0.08 245);
+  --color-secondary-content: oklch(22% 0.04 255);
+
+  /* Sky accent */
+  --color-accent: oklch(78% 0.13 220);
+  --color-accent-content: oklch(24% 0.07 235);
+
+  --color-neutral: oklch(32% 0.022 255);
+  --color-neutral-content: oklch(93% 0.01 240);
+
+  --color-info: oklch(74% 0.12 230);
+  --color-info-content: oklch(20% 0.05 230);
+  --color-success: oklch(74% 0.13 155);
+  --color-success-content: oklch(22% 0.06 155);
+  --color-warning: oklch(82% 0.13 80);
+  --color-warning-content: oklch(28% 0.08 80);
+  --color-error: oklch(70% 0.17 25);
+  --color-error-content: oklch(20% 0.04 25);
+
+  --radius-selector: 1rem;
+  --radius-field: 0.5rem;
+  --radius-box: 0.75rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 1;
+  --noise: 0;
+}
+
+/* Base typography rhythm shared across all sections */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family:
+      Inter,
+      ui-sans-serif,
+      system-ui,
+      -apple-system,
+      "Segoe UI",
+      Roboto,
+      "Helvetica Neue",
+      Arial,
+      sans-serif;
+  }
+
+  /* Offset anchor jumps so the sticky navbar doesn't cover section headings */
+  :where(section[id], [id="contact"]) {
+    scroll-margin-top: 5rem;
+  }
+}

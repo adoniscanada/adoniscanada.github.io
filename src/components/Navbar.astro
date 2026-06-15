@@ -1,0 +1,76 @@
+---
+import { Icon } from "astro-icon/components";
+
+const links = [
+  { label: "Skills", href: "#skills" },
+  { label: "Projects", href: "#projects" },
+  { label: "About", href: "#about" },
+];
+---
+
+<header
+  class="bg-base-100/80 border-base-300 sticky top-0 z-50 border-b backdrop-blur"
+>
+  <div class="max-lg:collapse mx-auto w-full max-w-5xl px-2">
+    <input id="navbar-toggle" class="peer hidden" type="checkbox" />
+    <!-- Click-away backdrop for the open mobile menu -->
+    <label
+      for="navbar-toggle"
+      class="fixed inset-0 hidden max-lg:peer-checked:block"
+      aria-hidden="true"></label>
+
+    <div class="collapse-title navbar p-0">
+      <div class="navbar-start">
+        <label for="navbar-toggle" class="btn btn-ghost btn-square lg:hidden">
+          <Icon name="tabler:menu-2" class="size-5" />
+          <span class="sr-only">Toggle menu</span>
+        </label>
+        <a href="#top" class="btn btn-ghost text-lg font-bold tracking-tight">
+          Adonis Canada
+        </a>
+      </div>
+
+      <div class="navbar-center hidden lg:flex">
+        <ul class="menu menu-horizontal gap-1 px-1">
+          {
+            links.map((link) => (
+              <li>
+                <a href={link.href} class="btn btn-ghost">
+                  {link.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div class="navbar-end">
+        <a
+          href="https://github.com/adoniscanada"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-primary btn-sm gap-1.5"
+        >
+          <Icon name="simple-icons:github" class="size-4" />
+          GitHub
+        </a>
+      </div>
+    </div>
+
+    <div class="collapse-content z-10 px-0 lg:hidden">
+      <ul class="menu w-40 p-2">
+        {
+          links.map((link) => (
+            <li>
+              <label for="navbar-toggle" class="contents">
+                <a href={link.href} class="btn btn-ghost">
+                  {link.label}
+                </a>
+              </label>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</header>

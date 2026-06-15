@@ -1,0 +1,80 @@
+---
+import { Icon } from "astro-icon/components";
+
+const iconFor: Record<string, string> = {
+  Python: "simple-icons:python",
+  TypeScript: "simple-icons:typescript",
+  JavaScript: "simple-icons:javascript",
+  "C++": "simple-icons:cplusplus",
+  Java: "tabler:coffee",
+  HTML: "simple-icons:html5",
+  CSS: "simple-icons:css3",
+  React: "simple-icons:react",
+  "Next.js": "simple-icons:nextdotjs",
+  "Node.js": "simple-icons:nodedotjs",
+  "Tailwind CSS": "simple-icons:tailwindcss",
+  MongoDB: "simple-icons:mongodb",
+  MySQL: "simple-icons:mysql",
+  SQLite: "simple-icons:sqlite",
+  Qt: "simple-icons:qt",
+  Git: "simple-icons:git",
+  GitHub: "simple-icons:github",
+  Claude: "simple-icons:claude",
+  GameMaker: "simple-icons:gamemaker",
+  "Godot Engine": "simple-icons:godotengine",
+  Lua: "simple-icons:lua",
+  Scratch: "simple-icons:scratch",
+  Astro: "simple-icons:astro",
+};
+const fallback = "tabler:code";
+
+const groups = [
+  {
+    label: "Languages",
+    items: ["Python", "TypeScript", "JavaScript", "C++", "Java", "HTML", "CSS"],
+  },
+  {
+    label: "Frameworks & Tools",
+    items: [
+      "React",
+      "Next.js",
+      "Node.js",
+      "Tailwind CSS",
+      "MongoDB",
+      "MySQL",
+      "SQLite",
+      "Qt",
+      "Git",
+      "GitHub",
+      "Claude",
+    ],
+  },
+  {
+    label: "Hobby & Teaching",
+    items: ["GameMaker", "Godot Engine", "Lua", "Scratch", "Astro"],
+  },
+];
+---
+
+<section id="skills" class="mx-auto w-full max-w-5xl px-4 py-12">
+  <h2 class="mb-8 text-2xl font-bold tracking-tight">Technical skills</h2>
+  <div class="bg-base-200 rounded-box divide-base-300 divide-y shadow-sm">
+    {
+      groups.map((group) => (
+        <div class="flex flex-col gap-3 p-5 sm:flex-row sm:items-baseline">
+          <div class="text-base-content/60 w-44 shrink-0 font-medium">
+            {group.label}
+          </div>
+          <div class="flex flex-wrap gap-2">
+            {group.items.map((item) => (
+              <span class="badge badge-soft badge-primary border-primary/40 gap-1.5 font-medium">
+                <Icon name={iconFor[item] ?? fallback} class="size-3.5" />
+                {item}
+              </span>
+            ))}
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>

@@ -1,0 +1,77 @@
+---
+import { Icon } from "astro-icon/components";
+import scratchpad_desktop from "../assets/scratchpad_desktop.png";
+---
+
+<section id="projects" class="mx-auto w-full max-w-5xl px-4 py-12">
+  <h2 class="mb-8 text-2xl font-bold tracking-tight">Featured project</h2>
+  <div class="flex flex-col gap-6 lg:flex-row lg:items-start">
+    <div
+      class="mockup-browser border-base-300 bg-base-200 w-full border lg:flex-1"
+    >
+      <div class="mockup-browser-toolbar">
+        <div class="input">https://scratchpad-sigma.vercel.app</div>
+      </div>
+      <img
+        src={scratchpad_desktop.src}
+        alt="Scratchpad app screenshot"
+        class="w-full"
+      />
+    </div>
+    <div class="card bg-base-200 w-full shadow-sm lg:max-w-md lg:flex-1">
+      <div class="card-body">
+        <h3 class="card-title text-xl">Scratchpad</h3>
+        <p class="text-base-content/70">
+          Full-stack collaboration & AI code-review platform for Scratch.
+        </p>
+        <div class="mt-1 flex flex-wrap gap-2">
+          <span
+            class="badge badge-soft badge-primary border-primary/40 gap-1.5 font-medium"
+          >
+            <Icon name="simple-icons:nextdotjs" class="size-3.5" />Next.js
+          </span>
+          <span
+            class="badge badge-soft badge-primary border-primary/40 gap-1.5 font-medium"
+          >
+            <Icon
+              name="simple-icons:mongodb"
+              class="size-3.5"
+            />MongoDB/Mongoose
+          </span>
+          <span
+            class="badge badge-soft badge-primary border-primary/40 gap-1.5 font-medium"
+          >
+            <Icon name="simple-icons:claude" class="size-3.5" />Anthropic Claude
+          </span>
+        </div>
+        <p class="mt-4">
+          Scratchpad brings Git-style version control to MIT Scratch block
+          coding. Students share their work as "Remixes," a student-friendly
+          take on branches and pull requests. Then, Claude reads the underlying
+          block logic to give beginner-friendly code review to both students and
+          instructors.
+        </p>
+        <div class="card-actions mt-4">
+          <a
+            class="btn btn-primary btn-sm"
+            href="https://scratchpad-sigma.vercel.app/projects/6a179622ed55953a60a86130?projectId=6a17983648170b995dec5492"
+            target="_blank">Live demo</a
+          >
+          <a
+            class="btn btn-ghost btn-sm"
+            href="https://github.com/HunterCogan/scratchpad"
+            target="_blank">Repo</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mt-8 flex justify-center">
+    <a href="#" class="btn btn-sm"
+      >See all projects <Icon
+        name="tabler:arrow-narrow-right"
+        class="size-4"
+      /></a
+    >
+  </div>
+</section>
