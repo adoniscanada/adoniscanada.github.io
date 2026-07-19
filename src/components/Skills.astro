@@ -57,18 +57,23 @@ const groups = [
 ---
 
 <section id="skills" class="mx-auto w-full max-w-5xl px-4 py-12">
-  <h2 class="mb-8 text-2xl font-bold tracking-tight">Technical skills</h2>
-  <div class="bg-base-200 rounded-box divide-base-300 divide-y shadow-sm">
+  <h2 class="reveal mb-8 text-2xl font-bold tracking-tight">
+    Technical skills
+  </h2>
+  <div class="border-base-300 rounded-box divide-base-300 divide-y border">
     {
       groups.map((group) => (
         <div class="flex flex-col gap-3 p-5 sm:flex-row sm:items-baseline">
-          <div class="text-base-content/60 w-44 shrink-0 font-medium">
+          <div class="text-base-content/60 w-44 shrink-0 font-mono text-sm">
             {group.label}
           </div>
           <div class="flex flex-wrap gap-2">
             {group.items.map((item) => (
-              <span class="badge badge-soft badge-primary border-primary/40 gap-1.5 font-medium">
-                <Icon name={iconFor[item] ?? fallback} class="size-3.5" />
+              <span class="badge border-base-300 bg-base-100 text-base-content gap-1.5 font-medium">
+                <Icon
+                  name={iconFor[item] ?? fallback}
+                  class="text-base-content/70 size-3.5"
+                />
                 {item}
               </span>
             ))}

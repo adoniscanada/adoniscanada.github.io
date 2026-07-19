@@ -1,50 +1,58 @@
+@import "@fontsource-variable/geist";
+@import "@fontsource-variable/geist-mono";
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
 @plugin "daisyui" {
   themes:
-    azure --default,
-    azure-dark --prefersdark;
+    forge --default,
+    forge-dark --prefersdark;
 }
 
+/*
+ * Palette: Gold + Slate. Saturated gold accent on cool neutral surfaces.
+ * One accent for the whole site; secondary stays a quiet slate.
+ */
 @plugin "daisyui/theme" {
-  name: "azure";
+  name: "forge";
   default: true;
   prefersdark: false;
   color-scheme: light;
 
-  /* Cool off-white surfaces, deep slate text */
-  --color-base-100: oklch(98.5% 0.004 240);
-  --color-base-200: oklch(96% 0.006 240);
-  --color-base-300: oklch(91% 0.009 245);
-  --color-base-content: oklch(28% 0.03 255);
+  /* Cool neutral surfaces, near-black ink */
+  --color-base-100: oklch(98% 0.003 250);
+  --color-base-200: oklch(95.5% 0.005 250);
+  --color-base-300: oklch(90% 0.008 252);
+  --color-base-content: oklch(24% 0.015 260);
 
-  /* Electric azure — primary action */
-  --color-primary: oklch(55% 0.18 250);
-  --color-primary-content: oklch(98% 0.01 250);
+  /* Deep gold, the single accent */
+  --color-primary: oklch(58% 0.13 88);
+  --color-primary-content: oklch(98% 0.01 95);
 
-  /* Deep navy — secondary */
-  --color-secondary: oklch(42% 0.09 255);
-  --color-secondary-content: oklch(97% 0.01 250);
+  /* Slate, quiet supporting color */
+  --color-secondary: oklch(44% 0.03 255);
+  --color-secondary-content: oklch(97% 0.005 250);
 
-  /* Sky / cyan — accent / highlights */
-  --color-accent: oklch(74% 0.13 220);
-  --color-accent-content: oklch(28% 0.07 235);
+  /* Accent aligned to the gold family to keep one accent per page */
+  --color-accent: oklch(66% 0.12 90);
+  --color-accent-content: oklch(22% 0.04 88);
 
-  /* Neutral cool charcoal */
-  --color-neutral: oklch(30% 0.025 255);
-  --color-neutral-content: oklch(95% 0.006 240);
+  --color-neutral: oklch(28% 0.02 258);
+  --color-neutral-content: oklch(95% 0.004 250);
 
-  --color-info: oklch(70% 0.12 230);
-  --color-info-content: oklch(25% 0.05 230);
-  --color-success: oklch(70% 0.13 155);
-  --color-success-content: oklch(26% 0.06 155);
-  --color-warning: oklch(82% 0.13 80);
-  --color-warning-content: oklch(38% 0.08 80);
-  --color-error: oklch(63% 0.19 25);
+  --color-info: oklch(66% 0.09 235);
+  --color-info-content: oklch(24% 0.05 235);
+  --color-success: oklch(64% 0.11 150);
+  --color-success-content: oklch(22% 0.06 150);
+  --color-warning: oklch(78% 0.13 80);
+  --color-warning-content: oklch(34% 0.08 80);
+  --color-error: oklch(56% 0.19 28);
   --color-error-content: oklch(98% 0.01 25);
 
-  --radius-selector: 1rem;
+  /* Shape lock: one 8px radius scale everywhere */
+  --radius-selector: 0.5rem;
   --radius-field: 0.5rem;
-  --radius-box: 0.75rem;
+  --radius-box: 0.5rem;
   --size-selector: 0.25rem;
   --size-field: 0.25rem;
   --border: 1px;
@@ -53,44 +61,43 @@
 }
 
 @plugin "daisyui/theme" {
-  name: "azure-dark";
+  name: "forge-dark";
   default: false;
   prefersdark: true;
   color-scheme: dark;
 
-  /* Deep navy-black surfaces, cool off-white text */
-  --color-base-100: oklch(20% 0.018 255);
-  --color-base-200: oklch(24% 0.02 255);
-  --color-base-300: oklch(29% 0.022 255);
-  --color-base-content: oklch(92% 0.012 240);
+  /* Cool charcoal surfaces, off-white ink */
+  --color-base-100: oklch(19% 0.012 260);
+  --color-base-200: oklch(23% 0.014 260);
+  --color-base-300: oklch(28.5% 0.016 260);
+  --color-base-content: oklch(93% 0.006 250);
 
-  /* Azure, lifted for dark surfaces */
-  --color-primary: oklch(66% 0.17 250);
-  --color-primary-content: oklch(20% 0.04 250);
+  /* Gold, lifted for dark surfaces */
+  --color-primary: oklch(78% 0.13 88);
+  --color-primary-content: oklch(22% 0.04 88);
 
-  /* Steel blue — secondary */
-  --color-secondary: oklch(72% 0.08 245);
-  --color-secondary-content: oklch(22% 0.04 255);
+  /* Slate, lifted */
+  --color-secondary: oklch(72% 0.025 255);
+  --color-secondary-content: oklch(22% 0.02 258);
 
-  /* Sky accent */
-  --color-accent: oklch(78% 0.13 220);
-  --color-accent-content: oklch(24% 0.07 235);
+  --color-accent: oklch(82% 0.11 90);
+  --color-accent-content: oklch(22% 0.04 88);
 
-  --color-neutral: oklch(32% 0.022 255);
-  --color-neutral-content: oklch(93% 0.01 240);
+  --color-neutral: oklch(30% 0.016 260);
+  --color-neutral-content: oklch(94% 0.005 250);
 
-  --color-info: oklch(74% 0.12 230);
-  --color-info-content: oklch(20% 0.05 230);
-  --color-success: oklch(74% 0.13 155);
-  --color-success-content: oklch(22% 0.06 155);
-  --color-warning: oklch(82% 0.13 80);
-  --color-warning-content: oklch(28% 0.08 80);
-  --color-error: oklch(70% 0.17 25);
-  --color-error-content: oklch(20% 0.04 25);
+  --color-info: oklch(72% 0.09 235);
+  --color-info-content: oklch(20% 0.05 235);
+  --color-success: oklch(70% 0.11 150);
+  --color-success-content: oklch(20% 0.06 150);
+  --color-warning: oklch(80% 0.12 80);
+  --color-warning-content: oklch(26% 0.08 80);
+  --color-error: oklch(66% 0.17 28);
+  --color-error-content: oklch(18% 0.04 25);
 
-  --radius-selector: 1rem;
+  --radius-selector: 0.5rem;
   --radius-field: 0.5rem;
-  --radius-box: 0.75rem;
+  --radius-box: 0.5rem;
   --size-selector: 0.25rem;
   --size-field: 0.25rem;
   --border: 1px;
@@ -106,7 +113,7 @@
 
   body {
     font-family:
-      Inter,
+      "Geist Variable",
       ui-sans-serif,
       system-ui,
       -apple-system,
@@ -117,8 +124,80 @@
       sans-serif;
   }
 
+  code,
+  kbd,
+  pre,
+  samp {
+    font-family:
+      "Geist Mono Variable",
+      ui-monospace,
+      SFMono-Regular,
+      Menlo,
+      Consolas,
+      monospace;
+  }
+
+  ::selection {
+    background: color-mix(
+      in oklch,
+      var(--color-primary) 25%,
+      var(--color-base-100)
+    );
+  }
+
   /* Offset anchor jumps so the sticky navbar doesn't cover section headings */
   :where(section[id], [id="contact"]) {
     scroll-margin-top: 5rem;
+  }
+}
+
+/* Entry motion: single fade-up on section headings, gated by reduced motion */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation: reveal-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 40%;
+    }
+  }
+
+  @keyframes reveal-up {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+/* Blog prose: theme-aware colors */
+@layer components {
+  .prose {
+    --tw-prose-body: var(--color-base-content);
+    --tw-prose-headings: var(--color-base-content);
+    --tw-prose-links: var(--color-primary);
+    --tw-prose-bold: var(--color-base-content);
+    --tw-prose-quotes: var(--color-base-content);
+    --tw-prose-quote-borders: var(--color-primary);
+    --tw-prose-code: var(--color-base-content);
+    --tw-prose-pre-bg: var(--color-neutral);
+    --tw-prose-pre-code: var(--color-neutral-content);
+    --tw-prose-counters: var(--color-primary);
+    --tw-prose-bullets: var(--color-primary);
+    --tw-prose-hr: var(--color-base-300);
+    --tw-prose-th-borders: var(--color-base-300);
+    --tw-prose-td-borders: var(--color-base-300);
+  }
+
+  .prose :where(h2, h3):not(:where([class~="not-prose"] *)) {
+    letter-spacing: -0.02em;
+  }
+
+  .prose :where(img):not(:where([class~="not-prose"] *)) {
+    border-radius: var(--radius-box);
+    border: 1px solid var(--color-base-300);
   }
 }

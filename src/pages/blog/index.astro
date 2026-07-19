@@ -1,0 +1,16 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import Blog from "../../components/Blog.astro";
+
+const posts = (await getCollection("blog", ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+---
+
+<Layout
+  title="Blog · Adonis Canada"
+  description="Posts on projects, AI, and full-stack development."
+>
+  <Blog posts={posts} />
+</Layout>

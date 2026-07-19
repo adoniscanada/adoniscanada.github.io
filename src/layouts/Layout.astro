@@ -2,6 +2,16 @@
 import "../styles/global.css";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Adonis Canada",
+  description = "Adonis Canada — CS graduate building secure and thoughtful software. Full-stack & AI solutions, University of Connecticut cybersecurity concentration.",
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -12,11 +22,9 @@ import Footer from "../components/Footer.astro";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
-    <meta
-      name="description"
-      content="Adonis Canada — CS graduate building secure and thoughtful software. Full-stack & AI solutions, University of Connecticut cybersecurity concentration."
-    />
-    <title>Adonis Canada</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#f9f9fa" />
+    <title>{title}</title>
   </head>
   <body
     id="top"

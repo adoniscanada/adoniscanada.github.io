@@ -1,11 +1,19 @@
 ---
 import { Icon } from "astro-icon/components";
 import mixgit_desktop from "../assets/mixgit_desktop.png";
+
+const stack = [
+  { label: "Next.js", icon: "simple-icons:nextdotjs" },
+  { label: "MongoDB/Mongoose", icon: "simple-icons:mongodb" },
+  { label: "Anthropic Claude", icon: "simple-icons:claude" },
+];
 ---
 
 <section id="projects" class="mx-auto w-full max-w-5xl px-4 py-12">
-  <h2 class="mb-8 text-2xl font-bold tracking-tight">Featured project</h2>
-  <div class="flex flex-col gap-6 lg:flex-row lg:items-start">
+  <h2 class="reveal mb-8 text-2xl font-bold tracking-tight">
+    Featured project
+  </h2>
+  <div class="flex flex-col gap-8 lg:flex-row lg:items-start">
     <div
       class="mockup-browser border-base-300 bg-base-200 w-full border lg:flex-1"
     >
@@ -18,60 +26,54 @@ import mixgit_desktop from "../assets/mixgit_desktop.png";
         class="w-full"
       />
     </div>
-    <div class="card bg-base-200 w-full shadow-sm lg:max-w-md lg:flex-1">
-      <div class="card-body">
-        <h3 class="card-title text-xl">Mixgit</h3>
-        <p class="text-base-content/70">
-          Full-stack collaboration & AI code-review platform for Scratch.
-        </p>
-        <div class="mt-1 flex flex-wrap gap-2">
-          <span
-            class="badge badge-soft badge-primary border-primary/40 gap-1.5 font-medium"
-          >
-            <Icon name="simple-icons:nextdotjs" class="size-3.5" />Next.js
-          </span>
-          <span
-            class="badge badge-soft badge-primary border-primary/40 gap-1.5 font-medium"
-          >
-            <Icon
-              name="simple-icons:mongodb"
-              class="size-3.5"
-            />MongoDB/Mongoose
-          </span>
-          <span
-            class="badge badge-soft badge-primary border-primary/40 gap-1.5 font-medium"
-          >
-            <Icon name="simple-icons:claude" class="size-3.5" />Anthropic Claude
-          </span>
-        </div>
-        <p class="mt-4">
-          Mixgit brings Git-style version control to MIT Scratch block coding.
-          Students share their work as "Remixes," a student-friendly take on
-          branches and pull requests. Then, Claude reads the underlying block
-          logic to give beginner-friendly code review to both students and
-          instructors.
-        </p>
-        <div class="card-actions mt-4">
-          <a
-            class="btn btn-primary btn-sm"
-            href="https://mixgit.tech/adonis"
-            target="_blank">Live demo</a
-          >
-          <a
-            class="btn btn-ghost btn-sm"
-            href="https://github.com/HunterCogan/mixgit"
-            target="_blank">Repo</a
-          >
-        </div>
+    <div class="flex w-full flex-col gap-3 lg:max-w-md lg:flex-1">
+      <h3 class="text-xl font-bold tracking-tight">Mixgit</h3>
+      <p class="text-base-content/70">
+        Full-stack collaboration & AI code-review platform for Scratch.
+      </p>
+      <div class="mt-1 flex flex-wrap gap-2">
+        {
+          stack.map((tech) => (
+            <span class="badge border-base-300 bg-base-100 text-base-content gap-1.5 font-medium">
+              <Icon name={tech.icon} class="text-base-content/70 size-3.5" />
+              {tech.label}
+            </span>
+          ))
+        }
+      </div>
+      <p class="mt-3">
+        Mixgit brings Git-style version control to MIT Scratch block coding.
+        Students share their work as "Remixes," a student-friendly take on
+        branches and pull requests. Then, Claude reads the underlying block
+        logic to give beginner-friendly code review to both students and
+        instructors.
+      </p>
+      <div class="mt-4 flex flex-wrap gap-3">
+        <a
+          class="btn btn-primary btn-sm"
+          href="https://mixgit.tech/adonis"
+          target="_blank">Live demo</a
+        >
+        <a
+          class="btn btn-outline btn-sm"
+          href="/blog/teaching-claude-to-read-block-code/"
+          >Read the write-up</a
+        >
+        <a
+          class="btn btn-ghost btn-sm"
+          href="https://github.com/HunterCogan/mixgit"
+          target="_blank">Repo</a
+        >
       </div>
     </div>
   </div>
-  <div class="mt-8 flex justify-center">
-    <a href="#" class="btn btn-sm"
-      >See all projects <Icon
-        name="tabler:arrow-narrow-right"
-        class="size-4"
-      /></a
+  <div class="mt-10 flex justify-center">
+    <a
+      href="https://github.com/adoniscanada"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="btn btn-sm"
+      >More on GitHub <Icon name="tabler:arrow-narrow-right" class="size-4" /></a
     >
   </div>
 </section>
